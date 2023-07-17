@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+
+body {
+  font-family: "Epilogue", sans-serif;
+  min-height: 100vh;
+  background-color: var(--white);
+}
+
+:root {
+  --white: hsl(0, 0%, 98%);
+  --gray: hsl(0, 0%, 41%);
+  --black: hsl(0, 0%, 8%);
+}
+header {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+}
+#openMenu,
+#closeMenu {
+  background-color: transparent;
+  border: 0;
+}
+.hero img:nth-child(2) {
+  display: none;
+}
+.textArea {
+  margin: 1.5rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+h1 {
+  font-weight: 700;
+  font-size: clamp(2rem, 2vw, 4rem);
+  color: var(--black);
+}
+.clients {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 1rem; */
+  /* padding: 0 1rem; */
+  height: max-content;
+}
+.description {
+  padding: 0 1rem;
+  font-weight: 500;
+  color: var(--gray);
+  font-size: clamp(16px, 1vw, 1.5rem);
+}
+.clients img {
+  transform: scale(0.6);
+  flex-grow: 1;
+}
+.call_to_action {
+  border: 2px solid;
+  color: var(--white);
+  font-weight: 700;
+  background-color: var(--black);
+  text-decoration: none;
+  padding: .8rem 1.5rem;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  font-size: clamp(14px, 1vw, 2rem);
+}
+.wrapper {
+  /* Hide by uncommenting display */
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.67);
+  z-index: 2;
+  animation-name: fadeIn;
+  animation-duration: 300ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  height: 100%;
+}
+@keyframes fadeIn {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.67);
+    }
+}
+@keyframes fadeOut {
+    100% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    0% {
+        background-color: rgba(0, 0, 0, 0.67);
+    }
+}
+nav {
+  height: 100%;
+  position: absolute;
+  background-color: var(--white);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 67%;
+  z-index: 10;
+  color: var(--gray);
+  display: none;
+  flex-direction: column;
+  padding: 1rem 1rem 1rem 1.5rem;
+  z-index: 3;
+  transform: translateX(100%);
+  animation-name: menuSlideIn;
+  animation-duration: 300ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+@keyframes menuSlideIn {
+  0% {
+    transform: translate(100%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes menuSlideOut {
+  100% {
+    transform: translate(100%);
+  }
+  0% {
+    transform: translate(0);
+  }
+}
+/* nav .dropdown {
+  height: auto;
+  overflow: hidden;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+  margin: 1rem;
+  /* hide by changing height to 0 */
+  /* height: 0; */
+  /* when its hidden mke margin 0.5 */
+  /* margin: 0.5rem; */
+/* }
+nav .dropdown li {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  /* margin-bottom: 0;
+} */
+
+/* nav .dropdown li img { 
+  transform: scale(1.5);
+}   */
+nav .dropdown {
+  height: max-content;
+  list-style: none;
+  overflow: hidden;
+  max-height: 0;
+  margin: 0.5rem 0;
+  /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.33); */
+}
+.expanded {
+  max-height: 1000px;
+}
+nav .dropdown li a {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  cursor: pointer;
+  transition: 150ms;
+}
+a:hover, a:focus, button:hover, button:focus #features:focus,
+#company:focus, #features:hover,
+#company:hover {
+  transition: 150ms;
+  color: var(--black);
+  /* border: none; */
+}
+#closeMenu {
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+#features,
+#company {
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  color: var(--gray);
+  /* margin-bottom: 1rem; */
+  padding: 0;
+  cursor: pointer;
+}
+nav a {
+  text-decoration: none;
+  color: var(--gray);
+  cursor: pointer;
+  /* margin-bottom: 1rem; */
+}
+.link {
+  margin-bottom: 1rem;
+}
+.btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* margin-top: 1rem; */
+}
+.btns a {
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.btns a:nth-child(2) {
+  border: 2px solid var(--black);
+  width: 100%;
+  text-align: center;
+  border-radius: 1rem;
+}
+.call_to_action:hover, .call_to_action:focus {
+  background: transparent;
+  color: var(--black);
+}
+/* HELL RESPONSIVE LAYOUTS fun! */
+@media screen and (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: auto 100px auto;
+    grid-template-rows: max-content auto auto;
+    margin: 1rem auto 0;
+    max-width: 1400px;
+    padding: 0 40px;
+  }
+  .hero img:nth-child(2) {
+    display: block;
+  }
+  .hero img:nth-child(1) {
+    display: none;
+  }
+  .hero {
+    grid-column: 3 / -1;
+    grid-row: 1 / -1; 
+    max-width: 500px;
+  }
+  .clients {
+    grid-row: 3 / -1;
+    align-self: flex-end;
+  }
+  .textArea {
+    grid-row: 1 / 3;
+    align-self: center;
+    text-align: start;
+    align-items: start;
+    gap: 3rem;
+    max-width: 600px;
+    margin: auto 0 0;
+  }
+  h1 {
+    font-size: 4.8vw;
+    line-height: 1;
+    max-width: 540px;
+  }
+  .description {
+    padding: 0;
+    font-size: 1.2rem;
+    max-width: 450px;
+  }
+  .call_to_action {
+    font-size: 1.5rem;
+  }
+  header {
+    padding: 1.5rem 2rem;
+    justify-content: start;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  #openMenu, #closeMenu {
+    display: none;
+  }
+  nav {
+    position: relative;
+    display: grid;
+    flex-grow: 1;
+    grid-template-columns: repeat(4, max-content) auto max-content;
+    gap: 10px;
+    padding: 0;
+  }
+  .btns {
+    flex-direction: row;
+    grid-column: 6 / -1;
+    grid-row: 1 / 2;
+  }
+  .btns a {
+    padding: 0.5rem 1.5rem;
+    margin: 0;
+  }
+  #company {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  .dropdown {
+    grid-row: 2 / 3;
+    position: absolute;
+    background-color: var(--white);
+    padding: 0 5px;
+  }
+  .featuresDropdown {
+    left: -5px;
+  }
+  .companyDropdown {
+    left: 130px;
+  }
+  nav .link {
+    align-self: center;
+    margin: 0 10px;
+  }
+}
