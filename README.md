@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [](https://github.com/victor247k/IntroSectionWithDropdownNavigation)
-- Live Site URL: [](https://victor247k.github.io/IntroSectionWithDropdownNavigation/)
+- Solution URL: [here](https://github.com/victor247k/IntroSectionWithDropdownNavigation)
+- Live Site URL: [here](https://victor247k.github.io/IntroSectionWithDropdownNavigation/)
 
 ## My process
 
